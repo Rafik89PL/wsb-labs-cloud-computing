@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gallery</title>
-    </head>
-    <body>
-        <h1> Simple Gallery </h1>
-        <p>Picture of a tree:</p>
-        <img src="{{url_for('static', filename='tree.png') }}" width="320px" height="480px" alt="tree"><br>
-        <p>
-            <a href="/">Back to Home Page</a>
-        </p>
-    </body>
-</html>
+{% extends "/base/base.html" %}
+{% set active_page = "gallery" %}
+{% block title %} Gallery {% endblock %}
+{% block body %}
+    <h1 align="center">Fajne zdjęcia</h1>
+  <div class="row gx-2 gy-2 justify-content-md-center">
+    <div class="col column p-2"><img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages mx-auto d-block" id="myImg" alt="Lena"></div>
+    <div class="col column p-2"><img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages mx-auto d-block" id="myImg" alt="Lena"></div>
+      <div class="col column p-2"><img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages mx-auto d-block" id="myImg" alt="Lena"></div>
+      </div>
+<div class="row gx-2 gy-2 justify-content-md-center">
+      <div class="col column p-2" > <img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="Lena"></div>
+      <div class="col column p-2" > <img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="Lena"></div>
+      <div class="col column p-2"> <img src="{{ url_for('static', filename='graphics/Lena.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="Lena"></div>
+    </div>
+<div class="row gx-2 gy-2 justify-content-md-center">
+    <div class="col column p-2" ><img src="{{ url_for('static', filename='graphics/wir.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="kwiaty"></div>
+    <div class="col column p-2"><img src="{{ url_for('static', filename='graphics/wir.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="kwiaty"></div>
+      <div class="col column p-2"><img src="{{ url_for('static', filename='graphics/wir.jpg') }}" class="rounded float-start img-gallery myImages" id="myImg" alt="kwiaty"></div>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+{% endblock %}
